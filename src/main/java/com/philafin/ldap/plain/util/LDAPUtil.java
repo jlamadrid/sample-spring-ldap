@@ -131,7 +131,7 @@ public class LDAPUtil {
     public List<GroupDTO> allGroups() {
 
         LdapQuery query = query()
-                .where("objectcategory").is("group");
+                .where("objectclass").is("group");
 
         return ldapTemplate.search(query,
                 new AttributesMapper<GroupDTO>() {
@@ -165,7 +165,7 @@ public class LDAPUtil {
 
         //OU=Groups,OU=Marketing,DC=icmg,DC=com
         LdapQuery query = query()
-                .where("objectcategory").is("group").and("OU").is(department).and("OU").is("Groups");
+                .where("objectclass").is("group").and("OU").is(department).and("OU").is("Groups");
 
         return ldapTemplate.search(query,
                 new AttributesMapper<GroupDTO>() {
