@@ -6,7 +6,8 @@ package com.philafin.ldap.plain.dao;
 public class ContactDTO {
 
     String mail;
-    String sap;
+    String department;
+    String title;
     String distinguishedName;
     String cn;
 
@@ -26,12 +27,20 @@ public class ContactDTO {
         this.distinguishedName = distinguishedName;
     }
 
-    public String getSap() {
-        return sap;
+    public String getDepartment() {
+        return department;
     }
 
-    public void setSap(String sap) {
-        this.sap = sap;
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 
     public String getMail() {
@@ -47,9 +56,10 @@ public class ContactDTO {
         StringBuffer contactDTOStr = new StringBuffer("Person=[");
 
         contactDTOStr.append(" mail = " + mail);
-        contactDTOStr.append(" sap = " + sap);
+        contactDTOStr.append(" title = " + title);
+        contactDTOStr.append(" department = " + department);
         contactDTOStr.append(" dn = " + distinguishedName);
-        contactDTOStr.append(" cd = " + cn);
+        contactDTOStr.append(" cn = " + cn);
         contactDTOStr.append(" ]");
 
         return contactDTOStr.toString();

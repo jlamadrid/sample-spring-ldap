@@ -27,6 +27,11 @@
         <property name="ldapTemplate" ref="ldapTemplate" />
     </bean>
 
+    <bean id="ldapUtil" class="com.philafin.ldap.plain.util.LDAPUtil">
+        <property name="ldapTemplate" ref="ldapTemplate" />
+    </bean>
+
+
     <!--
     <beans profile="default">
         Populates the LDAP server with initial data
