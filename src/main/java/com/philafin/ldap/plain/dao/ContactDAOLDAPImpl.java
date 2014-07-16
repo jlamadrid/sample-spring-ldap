@@ -28,11 +28,8 @@ public class ContactDAOLDAPImpl implements IContactDAO {
             ContactDTO contactDTO = new ContactDTO();
 
             Attribute mail = attributes.get("mail");
-            Attribute sap = attributes.get("employeeNumber");
             if(mail != null)
                 contactDTO.setMail((String)mail.get());
-            if(sap != null)
-                contactDTO.setSap((String)sap.get());
 
             return contactDTO;
         }
